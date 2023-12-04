@@ -1,3 +1,2 @@
-# Git-Test
-ODIN project: git test
-Hello Odin!
+# Repos
+My public work is here!
