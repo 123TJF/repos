@@ -1,0 +1,62 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: gray;
+  color: yellow;
+}
+
+.large-font {
+  font-size: 30px;
+}
+.medium-font {
+  font-size: 25px;
+}
+.small-font {
+  font-size: 20px;
+}
+.tiny-font {
+  font-size: 15px;
+}
+.bold {
+  font-weight: 800;
+}
+.italic {
+  font-style: italic;
+}
+.indent {
+  padding-left: 25%;
+}
+.divider {
+  border-bottom: 5px solid black;
+  margin: 2px 0;
+}
+
+#img-div {
+  margin: auto;
+  text-align: center;
+}
+#page-title {
+  margin: 0;
+  margin-bottom: 1%;
+}
+#name-desc {
+  text-align: left;
+  margin: 2%;
+  margin-bottom: 1%;
+}
+#image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: auto;
+}
+#actors-list {
+  text-align: left;
+}
+#tribute-info {
+  background-color: gray;
+  color: black;
+}
+#footnote {
+  margin: 2% 25%;
+}

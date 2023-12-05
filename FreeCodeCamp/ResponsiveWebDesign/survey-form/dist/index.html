@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Survey Form</title>
+  <meta attribute="value">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body>
+  <h1 id="title">Survey Form</h1>
+  <p id="description">Thank you for taking the time to help us improve the platform</p>
+  <form id="survey-form">
+    <label id="name-label">Name</label>
+    <br>
+    <input id="name"
+           class="form-input"
+           type="text"
+           placeholder="Enter Your Name"required/>
+    <br>
+    <label id="email-label">Email</label>
+    <br>
+    <input id="email" 
+           class="form-input" 
+           type="email"
+           placeholder="Enter Your Email"
+           required/>
+    <br>
+    <label id="number-label">Age</label>
+    <br>
+    <input class="form-input"  
+           id="number" min="18" max="99"
+           placeholder="Enter Your Age" 
+           type="number" required/>
+    <br>
+    <label for="dropdown">Describe Your Status</label>
+    <br>
+    <select name="dropdown" id="dropdown">
+      <option selected="true" disabled>Please select</option>
+      <option>Student</option>
+      <option>Employed</option>
+      <option>Prefer not to say</option>
+      <option>Other</option>
+    </select>
+    <br>
+    <br>
+    <fieldset>
+      <legend>Would you recommend freeCodeCamp to a friend? </legend>
+      <label class="rad" for="radio1">
+        <input type="radio"
+               id="radio1" 
+               class="recommend" 
+               name="recommend" 
+               value="Yes">Yes</label>
+      <label class="rad" for="radio2"> 
+        <input type="radio" 
+               id="radio2" 
+               class="recommend" 
+               name="recommend" 
+               value="No"/>No
+      </label>
+    </fieldset>
+    <br>
+    <fieldset>
+      <legend>What would you improve?</legend>
+      <label class="cbox" for="improve1">
+        <input type="checkbox" 
+               name="improve" 
+               class="improve"
+               id="improve1" 
+               value="1"/>Front-end Projects
+      </label>
+      <label class="cbox" for="improve2">
+        <input type="checkbox" 
+               name="improve" 
+               class="improve"
+               id="improve2" 
+               value="2"/>Back-end Projects
+      </label>
+      <label class="cbox" for="improve3">
+        <input type="checkbox" 
+               name="improve" 
+               class="improve" 
+               id="improve3" 
+               value="3"/>Data Visualization
+      </label>
+      <label class="cbox" for="improve4">
+        <input type="checkbox" 
+               name="improve"    
+               class="improve" 
+               id="improve4" 
+               value="4">Challenges
+      </label>
+    </fieldset>
+    <br>
+    <label id="comments">Comments Or Suggestions</label>
+    <br>
+    <textarea id="comments"></textarea>
+    <br>
+    <input type="submit" id="submit"></input>
+  </form>
+</body>
+<!-- partial -->
+  
+</body>
+</html>

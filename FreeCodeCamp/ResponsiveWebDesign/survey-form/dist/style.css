@@ -1,0 +1,68 @@
+body {
+  background-color:lightblue
+}
+
+label {
+  margin-left: 2%
+}
+
+#title,
+#description {
+  text-align: center;
+}
+
+#survey-form {
+  margin: auto;
+  background-color: lightgray;
+  width:90%;
+  border: solid red 1px;
+}
+
+.form-input {
+  width: 96%;
+  margin-left: 2%;
+}
+
+#dropdown {
+  width: 96%;
+  margin-left: 2%;
+}
+
+#comments {
+  width: 96%;
+  height: 150px;
+  margin-left: 2%;
+}
+
+input {
+  width: 100%;
+}
+
+fieldset {
+  width: 90%;
+  margin: auto;
+}
+
+.cbox, .rad {
+  display: block;
+  padding-left: 15px;
+}
+
+.improve, .recommend {
+  width: 10%;
+  height: 15px;
+  padding: 15px;
+  margin: 0;
+  vertical-align: bottom;
+  position: relative;
+  top: -1px;
+}
+
+#submit {
+  height: 30px;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  margin-left: 2%;
+  width: 50%;
+  background-color: lightgreen;
+}
