@@ -2,77 +2,76 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Technical Documentation</title>
-  <link rel="stylesheet" href="./style.css">
+  <title>CodePen - Python Technical Documentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet"><link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Technical Documentation</title>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
-  <link href="./styles.css" rel="stylesheet">
-</head>
-  
-<body>
-  
-  <!-- Navigation Bar -->
+<!-- Navigation Bar -->
   <nav id="navbar" class="sidemenu">
     <header id="navigation-header">Contents</header>
     <div class="divider"></div>
     <ul class="content-list">
-    <li class="content-item">
-      <a class="nav-link" href="#introduction">Introduction</a></li>
-    <li class="content-item">
-      <a class="nav-link" href="#getting_started">Getting Started</a></li>
-    <li class="content-item">
-      <label>
-        <a class="nav-link" href="#syntax">Syntax</a>&nbsp;
-        <span>&nbsp;&#x2794;&nbsp;</span>
-        <ul class="sub-menu">
-        <li><a class="link" href="#spaces">Spaces</a></li>
-        <li><a class="link" href="#variables">Variables</a></li>
-        <li><a class="link" href="#conditions">Conditions</a></li>
-        <li><a class="link" href="#loops">Loops</a></li>
-      </ul></label>
-    </li>
-    <li class="content-item">
-      <a class="nav-link" href="#functions">functions</a></li>
-    <li class="content-item">
-      <label>
-      <a class="nav-link" href="#object_oriented_programming">Object Oriented Programming</a>&nbsp;
-        <span>&nbsp;&#x2794;&nbsp;</span>
-        <ul class="sub-menu">          
-        <li><a class="link" href="#init-method">Init Method</a></li>
-        <li><a class="link" href="#object-methods">Object Methods</a></li>
-        <li><a class="link" href="#self-parameter">Self Pararameter</a></li>
-        <li><a class="link" href="#pass-parameter">Pass Pararameter</a></li>
-        <li><a class="link" href="#inheritance">Inheritance</a></li>
-        </ul>
-      </label>
-    </li>
-    <li class="content-item">
-      <a class="nav-link" href="#libraries">Libraries</a></li>
-    <li class="content-item">
-      <a class="nav-link" href="#reference">Reference</a></li>
-    </u>
+      <li class="content-item">
+        <a class="nav-link" href="#introduction">Introduction</a>
+      </li>
+      <li class="content-item">
+        <a class="nav-link" href="#getting_started">Getting Started</a>
+      </li>
+      <li class="content-item">
+        <label>
+          <a class="nav-link" href="#syntax">Syntax</a>&nbsp;
+          <span>&nbsp;&#x2794;&nbsp;</span>
+          <div class="sub-menu">
+            <ul >
+              <li><a class="link" href="#spaces">Spaces</a></li>
+              <li><a class="link" href="#variables">Variables</a></li>
+              <li><a class="link" href="#conditions">Conditions</a></li>
+              <li><a class="link" href="#loops">Loops</a></li>
+            </ul>
+          </div>
+        </label>
+      </li>
+      <li class="content-item">
+        <a class="nav-link" href="#functions">functions</a></li>
+      <li class="content-item">
+        <label>
+          <a class="nav-link" href="#object_oriented_programming">Object Oriented Programming</a>&nbsp;
+          <span>&nbsp;&#x2794;&nbsp;</span>
+          <ul class="sub-menu">          
+            <li><a class="link" href="#init-method">Init Method</a></li>
+            <li><a class="link" href="#object-methods">Object Methods</a></li>
+            <li><a class="link" href="#self-parameter">Self Pararameter</a></li>
+            <li><a class="link" href="#pass-parameter">Pass Pararameter</a></li>
+            <li><a class="link" href="#inheritance">Inheritance</a></li>
+          </ul>
+        </label>
+      </li>
+      <li class="content-item">
+        <a class="nav-link" href="#libraries">Libraries</a>
+      </li>
+      <li class="content-item">
+        <a class="nav-link" href="#reference">Reference</a>
+      </li>
+    </ul>
   </nav>
   
-  <BR>
+  <br>
 
   <!-- Main Page -->
   <main id="main-doc">
     <h1 id="main-header">Introduction to Python<h1>
     <section class="main-section"  id="introduction">
-      <header class="line-spacing section-header">Introduction</header>
-      <header class="line-spacing section-sub-header">What is Python?</header>
-      <p class="line-spacing section-paragraph">Python is a popular programming language. It was created by Guido van Rossum, and released in 1991. It is used for:</p>
-     <ul class="line-spacing list">
+      <header class="line-spacing section-header">Introduction
+      </header>
+      <header class="line-spacing section-sub-header">What is Python?
+      </header>
+      <p class="line-spacing section-paragraph">
+        Python is a popular programming language. It was created by Guido van Rossum, and released in 1991. It is used for:
+      </p>
+      <ul class="line-spacing list">
         <li>web development (server-side),</li>
         <li>software development,</li>
         <li>mathematics,</li>
@@ -87,19 +86,26 @@
         <li>Python can be used to handle big data and perform complex mathematics.</li>
         <li>Python can be used for rapid prototyping, or for production-ready software development.</li>
       </ul>
-      <header class="line-spacing section-sub-header">Why Python?</header>
-      <p class="line-spacing section-paragraph">Python works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc). Python has a simple syntax similar to the English language.
+      <header class="line-spacing section-sub-header">Why Python?
+      </header>
+      <p class="line-spacing section-paragraph">
+        Python works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc). Python has a simple syntax similar to the English language.
 Python has syntax that allows developers to write programs with fewer lines than some other programming languages. Python runs on an interpreter system, meaning that code can be executed as soon as it is written. This means that prototyping can be very quick. Python can be treated in a procedural way, an object-oriented way or a functional way.
       </p>
     </section> 
-      <div class="divider"></div>
+    
+    <div class="divider"></div>
+      
     <section class="main-section" id="getting_started">      
       <header class="line-spacing section-header">Getting Started</header>
       <header class="line-spacing section-sub-header">Running Python</header>
       <p class="line-spacing section-paragraph">
 Python is an interpreted programming language, this means that as a developer you write Python (.py) files in a text editor and then put those files into the python interpreter to be executed. The way to run a python file is like this on the command line (in Windows):    
-      
-      <span class="line-spacing span"><code class="code">C:\Users\Your Name>python helloworld.py</code></span></p>
+        <span class="line-spacing span">
+          <code class="code">C:\Users\Your Name>python helloworld.py
+          </code>
+        </span>
+      </p>
       <header class="line-spacing section-sub-header">Command Line
       </header>       
       <p class="line-spacing section-paragraph">
@@ -514,7 +520,6 @@ Whilst every effort has been made to ensure accuracy of this page, it is not mea
       </p>
     </section>
   </main>
-</body>
 <!-- partial -->
   
 </body>

@@ -49,21 +49,26 @@ em {
   color: black;
 }
 #navbar li:hover label ul {
-  font-size: 14px;
+  font-size: 16px;
   display: block;
-  height: 30%;
+  width: 50%;
+  position: absolute;
+  z-index: 10;
+  margin: 0;
+  margin-left: 20%;
+  padding: 0;
 }
 #navbar li:hover {
   background-color: gray;
-  border: 0;
+  border: 2px solid black; 
 }
 
-.nav-link:link {    color: white; }
-.nav-link:visited { color: orange;  }
-.nav-link:hover {   color: white; }
-.link:link {    color: white; }
-.link:visited { color: orange;  }
-.link:hover {   color: white; }
+.nav-link:link    { color: white;  }
+.nav-link:visited { color: orange; }
+.nav-link:hover   { color: white;  }
+.link:link        { color: white;  }
+.link:visited     { color: orange; }
+.link:hover       { color: white;  }
 
 /* More general styling for main document */
 
