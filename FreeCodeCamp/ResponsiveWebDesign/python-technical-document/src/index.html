@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Technical Documentation</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
+  <link href="./styles.css" rel="stylesheet">
+</head>
+  
+<body>
+  
+  <!-- Navigation Bar -->
+  <nav id="navbar" class="sidemenu">
+    <header id="navigation-header">Contents</header>
+    <div class="divider"></div>
+    <ul class="content-list">
+    <li class="content-item">
+      <a class="nav-link" href="#introduction">Introduction</a></li>
+    <li class="content-item">
+      <a class="nav-link" href="#getting_started">Getting Started</a></li>
+    <li class="content-item">
+      <label>
+        <a class="nav-link" href="#syntax">Syntax</a>&nbsp;
+        <span>&nbsp;&#x2794;&nbsp;</span>
+        <ul class="sub-menu">
+        <li><a class="link" href="#spaces">Spaces</a></li>
+        <li><a class="link" href="#variables">Variables</a></li>
+        <li><a class="link" href="#conditions">Conditions</a></li>
+        <li><a class="link" href="#loops">Loops</a></li>
+      </ul></label>
+    </li>
+    <li class="content-item">
+      <a class="nav-link" href="#functions">functions</a></li>
+    <li class="content-item">
+      <label>
+      <a class="nav-link" href="#object_oriented_programming">Object Oriented Programming</a>&nbsp;
+        <span>&nbsp;&#x2794;&nbsp;</span>
+        <ul class="sub-menu">          
+        <li><a class="link" href="#init-method">Init Method</a></li>
+        <li><a class="link" href="#object-methods">Object Methods</a></li>
+        <li><a class="link" href="#self-parameter">Self Pararameter</a></li>
+        <li><a class="link" href="#pass-parameter">Pass Pararameter</a></li>
+        <li><a class="link" href="#inheritance">Inheritance</a></li>
+        </ul>
+      </label>
+    </li>
+    <li class="content-item">
+      <a class="nav-link" href="#libraries">Libraries</a></li>
+    <li class="content-item">
+      <a class="nav-link" href="#reference">Reference</a></li>
+    </u>
+  </nav>
+  
+  <BR>
+
+  <!-- Main Page -->
+  <main id="main-doc">
+    <h1 id="main-header">Introduction to Python<h1>
+    <section class="main-section"  id="introduction">
+      <header class="line-spacing section-header">Introduction</header>
+      <header class="line-spacing section-sub-header">What is Python?</header>
+      <p class="line-spacing section-paragraph">Python is a popular programming language. It was created by Guido van Rossum, and released in 1991. It is used for:</p>
+     <ul class="line-spacing list">
+        <li>web development (server-side),</li>
+        <li>software development,</li>
+        <li>mathematics,</li>
+        <li>system scripting.</li>
+      </ul>
+      <header class="line-spacing section-sub-header indent">What can Python do?
+      </header>
+      <ul class="line-spacing list">
+        <li>Python can be used on a server to create web applications.</li>
+        <li>Python can be used alongside software to create workflows.
+        <li>Python can connect to database systems. It can also read and modify files.</li>
+        <li>Python can be used to handle big data and perform complex mathematics.</li>
+        <li>Python can be used for rapid prototyping, or for production-ready software development.</li>
+      </ul>
+      <header class="line-spacing section-sub-header">Why Python?</header>
+      <p class="line-spacing section-paragraph">Python works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc). Python has a simple syntax similar to the English language.
+Python has syntax that allows developers to write programs with fewer lines than some other programming languages. Python runs on an interpreter system, meaning that code can be executed as soon as it is written. This means that prototyping can be very quick. Python can be treated in a procedural way, an object-oriented way or a functional way.
+      </p>
+    </section> 
+      <div class="divider"></div>
+    <section class="main-section" id="getting_started">      
+      <header class="line-spacing section-header">Getting Started</header>
+      <header class="line-spacing section-sub-header">Running Python</header>
+      <p class="line-spacing section-paragraph">
+Python is an interpreted programming language, this means that as a developer you write Python (.py) files in a text editor and then put those files into the python interpreter to be executed. The way to run a python file is like this on the command line (in Windows):    
+      
+      <span class="line-spacing span"><code class="code">C:\Users\Your Name>python helloworld.py</code></span></p>
+      <header class="line-spacing section-sub-header">Command Line
+      </header>       
+      <p class="line-spacing section-paragraph">
+To test a short amount of code in python sometimes it is quickest and easiest not to write the code in a file. This is made possible because Python can be run as a command line itself.</p>
+      <p class="line-spacing section-paragraph">
+        <span class="line-spacing span">
+          <code class="code">C:\Users\Your Name>python</code><br>
+          <code class="code">Python 3.6.4 (v3.6.4:d48eceb, Dec 19 2017, 06:04:45) [MSC v.1900 32 bit (Intel)] on win32</code><br>
+          <code class="code">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</code>
+          <br>
+          <code class="code">&gt;&gt;&gt; <em>print(&quot;Hello, World!&quot;)</em></code>
+          <br>
+          <code class="code">Hello, World!</code>
+        </span></p>
+          <header class="line-spacing section-sub-header">Your First Program - Hello World</header>
+      <p class="line-spacing section-paragraph">
+        In order to write a Python program file you will need a text editor such as VS Code. Within the text editor, type the below line and then save as a file such as helloworld.<em>py</em></p>
+      <p class="line-spacing section-paragraph">
+        <span class="line-spacing span"><code class="code">print(&quot;Hello, World!&quot;)</code></span>
+      </p>
+      <p class="line-spacing section-paragraph">
+        Note that by convention a python file is prefixed with <code><em>.py</em></code> to indicate that the contents are understandable by python. Once the file is created, run it as below</p>
+      <p class="line-spacing section-paragraph">
+      <span class="line-spacing span"><code class="code">C:\Users\Your Name>python helloworld.py</code></span></p>
+    </section>
+    <div class="divider"></div>
+    <section class="main-section" id="syntax"> 
+      <header class="line-spacing section-header">Syntax</header>
+            <header class="line-spacing section-sub-header" id="spaces">Spaces</header>
+      <p class="line-spacing section-paragraph">
+      Where in other programming languages the indentation in code is for readability only, the indentation in Python is very important as Python uses this to indicate a block of code. The number of spaces is up to you as a programmer, the most common use is four, but it has to be at least one. However:
+        <ul class="line-spacing list">
+          <li>Skipping indentations will give an error</li>
+          <li>Indentations have to be consitently the same throughout the block of code.</li>
+      </ul>
+      </p>
+      <p class="section-paragraph underline indent-medium">Allowed</p>
+      <p class="section-paragraph indent-medium">
+        <span class="line-spacing span">
+          <code class="code">if 5 &gt; 2:</code>
+          <br>
+          <span class="line-spacing">
+          <code class="code code-indent-1">print(&quot;5 is great&quot;)</code>
+          </span>
+          <br>
+        </span>
+      </p>
+      <p class="section-paragraph underline indent-medium">Not Allowed</p>
+      <p class="section-paragraph indent-medium">
+        <span class="line-spacing span">
+          <code class="code">if 5 &gt; 2:</code>
+          <br>
+          <span class="line-spacing">
+          <code class="code">print(&quot;5 is great&quot;)</code>
+          </span>
+          <br>
+        </span>
+      </p>
+      <p class="section-paragraph indent-medium">
+        <span class="line-spacing span">
+          <code class="code">if 5 &gt; 2:</code>
+          <br>
+          <code class="code code-indent-1">print(&quot;5 is great&quot;)</code>
+          <br>
+          <code class="code code-indent-2">print(&quot;5 is great&quot;)</code>
+          <br>
+        </span>
+      </p>
+      <header class="line-spacing section-sub-header" id="variables">Variables</header>
+       <p class="line-spacing section-paragraph">
+Python has no command for declaring a variable. A variable is created the moment you first assign a value to it.</p>
+       <p class="section-paragraph underline indent-medium">Variable Names</p>
+      <p class="section-paragraph indent-medium">
+      A variable can have a short name (like x and y) or a more descriptive name (age, carname, total_volume). Rules for Python variables:</p>
+       <ul class="line-spacing list indent-large">
+         <li>A variable name must start with a letter or the underscore character</li>
+         <li>A variable name cannot start with a number</li>
+         <li>A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )</li>
+         <li>Variable names are case-sensitive (age, Age and AGE are three different variables)</li>
+         <li>A variable name cannot be any of the Python keywords.</li>
+      </ul>
+      <p class="section-paragraph underline indent-medium">Variable Data Types</p>
+      <ul class="line-spacing list indent-large">
+        <li>Text Type:	str</li>
+        <li>Numeric Types:	int, float, complex</li>
+        <li>Sequence Types:	list, tuple, range</li>
+        <li>Mapping Type:	dict</li>
+        <li>Set Types:	set, frozenset</li>
+        <li>Boolean Type:	bool</li>
+        <li>Binary Types:	bytes, bytearray, memoryview</li>
+        <li>None Type:	NoneType</li>
+      </ul>
+      <p class="section-paragraph indent-medium">
+        it is possible to specifically set the data type of a variable. For example:
+        <span class="line-spacing span">
+          <code class="code">x = str(&quot;Hello World&quot;)</code></span></p>
+      
+      <header class="line-spacing section-sub-header" id="conditions">Conditions</header>
+      <p class="section-paragraph indent-medium">
+        Python supports the usual logical conditions from mathematics:
+      </p>
+      <ul class="line-spacing list indent-large">
+        <li>Equals: a == b</li>
+        <li>Not Equals: a != b</li>
+        <li>Less than: a &lt; b</li>
+        <li>Less than or equal to: a &lt;= b</li>
+        <li>Greater than: a &gt; b</li>
+        <li>Greater than or equal to: a &gt;= b</li>
+      </ul>
+      <p class="section-paragraph indent-medium">
+        Python also supports if statements:
+      </p>
+      <p class="section-paragraph indent-medium">
+        <span class="line-spacing span">
+          <code class="code">if 5 &gt; 2:</code>
+          <br>
+          <span class="line-spacing">
+            <code class="code code-indent-1">print(&quot;5 is great&quot;)</code>
+          </span>
+          <br>
+          <code class="code">elif 5 &lt; 2:</code>
+          <br>
+          <span class="line-spacing">
+            <code class="code code-indent-1">print(&quot;5 is less&quot;)</code>
+          </span>
+        </span>
+      </p>
+      <header class="line-spacing section-sub-header" id="loops">Loops</header>
+      <p class="section-paragraph underline indent-medium">The while Loop</p>
+      <p class="section-paragraph indent-medium">
+With the while loop we can execute a set of statements as long as a condition is true.
+      </p>
+      <p class="section-paragraph indent-medium">
+        <span class="line-spacing span">
+          <code class="code">i = 1</code>
+          <br>
+          <code class="code">while i &lt; 6:</code>
+          <br>
+          <span class="line-spacing">
+            <code class="code code-indent-1">print(i)</code>
+          </span>
+          <br>
+          <code class="code code-indent-1">if i == 3:</code>
+          <br>
+          <span class="line-spacing">
+            <code class="code code-indent-2">break</code>
+          </span>
+          <br>
+          <code class="code code-indent-1">i += 1</code>
+        </span>
+      </p>
+      <p class="section-paragraph indent-medium">
+        Note the use of the <em>break</em> keyword to exit the loop early.
+      </p>
+      <p class="section-paragraph underline indent-medium">The For Loop</p>
+      <p class="section-paragraph indent-medium">
+Python also supports for loops.
+      </p>
+      <p class="section-paragraph indent-medium">
+        <span class="line-spacing span">
+          <code class="code">fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]</code>
+          <br>
+          <code class="code">for x in fruits:</code>
+          <br>
+          <span class="line-spacing">
+            <code class="code code-indent-1">print(x)</code>
+          </span>
+          <br>
+        </span>
+      </p>
+     <p class="section-paragraph indent-medium">
+You can also use the range keyword in for loops.
+      </p>
+      <p class="section-paragraph indent-medium">
+        <span class="line-spacing span">
+          <code class="code">for x in range(6):</code>
+          <br>
+          <span class="line-spacing">
+            <code class="code code-indent-1">print(x)</code>
+          </span>
+          <br>
+        </span>
+      </p>
+    <section>
+    <div class="divider"></div>
+    <section class="main-section" id="functions">
+      <header class="section-header">functions</header>
+
+      <p class="section-paragraph indent-medium">
+Functions are defined by the 'def' keyword with spaces used to define the scope of the function. Arguments can be optionally defined. To call the function, type the function name with brackets containing any arguments. The code below illustrates these points.
+      </p>
+      <p class="section-paragraph indent-medium">
+        <span class="line-spacing span">
+          <code class="code">def my_function(fname):</code>
+          <br>
+          <span class="line-spacing">
+            <code class="code code-indent-1">print(&quot;Hello&nbsp;&quot; + fname)</code>
+          </span>
+          <br>
+          <br>
+          <code class="code">my_function(&quot;Emil&quot;)</code>
+          <br>
+          <code class="code">my_function(&quot;Fred&quot;)</code>
+          <br>
+          <code class="code">my_function(&quot;Bill&quot;)</code>
+          <br>
+        </span>
+    </section>
+    <div class="divider"></div>
+    <section class="main-section" id="object_oriented_programming">
+      <header class="section-header">Object Oriented Programming</header>
+      <p class="line-spacing section-paragraph">
+Almost everything in Python is an object, with its properties and methods.
+A Class is like an object constructor, or a &quot;blueprint&quot; for creating objects.
+      </p>
+      <p class="section-paragraph indent-medium">
+        <span class="line-spacing span">
+          <code class="code">class MyClass:</code>
+          <br>
+          <code class="code code-indent-1">x = 5</code>
+          <br>
+        </span>
+      </p>
+      <p class="line-spacing section-paragraph">
+      Now we can use the class named MyClass to create objects:
+      </p>
+      <p class="section-paragraph indent-medium">
+        <span class="line-spacing span">
+          <code class="code">p1 = MyClass()</code>
+          <br>
+          <code class="code">print(p1.x)</code>
+          <br>
+        </span>
+      </p>
+      <header class="line-spacing section-sub-header" id="init-method">Init Method</header>
+      <p class="line-spacing section-paragraph">
+All classes have a function called __init__(), which is always executed when the class is being initiated. Use the __init__() function to assign values to object properties, or other operations that are necessary to do when the object is being created:
+      </p>
+      <p class="section-paragraph indent-medium">
+        <span class="line-spacing span">
+          <code class="code">class Car:</code>
+          <br>
+          <code class="code code-indent-1">def __init__(self, model, type):</code>
+          <br>
+          <code class="code code-indent-2">self.model = model</code>
+          <br>
+          <code class="code code-indent-2">self.type = type</code>
+          <br>
+          <br>
+          <code class="code">p1 = Car(&quot;Ford&quot;, &quot;Saloon&quot;)</code>
+          <br>
+          <code class="code">print(p1.model</code>
+          <br>
+          <code class="code">print(p1.type)</code>
+        </span>
+      </p>
+      <header class="line-spacing section-sub-header" id="object-methods">Object Methods</header>
+      <p class="line-spacing section-paragraph">
+Objects can also contain methods. Methods in objects are functions that belong to the object. Looking at the Car example, a print function can be added.
+      </p>
+      <p class="section-paragraph indent-medium">
+        <span class="line-spacing span">
+          <code class="code">class Car:</code>
+          <br>
+          <code class="code code-indent-1">def __init__(self, model, type):</code>
+          <br>
+          <code class="code code-indent-2">self.model = model</code>
+          <br>
+          <code class="code code-indent-2">self.type = type</code>
+          <br>
+          <br>
+          <code class="code code-indent-1">def printMe(self)</code>
+          <br>
+          <code class="code code-indent-2">print(&quot;This car is a &quot; + p1.model + &quot;&nbsp;&quot; + p1.type)</code>
+          <br>
+          <br>
+          <code class="code">p1 = Car(&quot;Ford&quot;, &quot;Saloon&quot;)</code>
+          <br>
+          <code class="code">p1.printMe()</code>
+          <br>
+        </span>
+      </p>
+      <header class="line-spacing section-sub-header" id="self-parameter">Self Parameter</header>
+      <p class="line-spacing section-paragraph">
+The self parameter is a reference to the current instance of the class, and is used to access variables that belong to the class. It does not have to be named self, you can call it whatever you like (however by convention it is), but it has to be the first parameter of any function in the class.
+      </p>
+      <header class="line-spacing section-sub-header" id="pass-parameter">Pass Parameter</header>
+      <p class="line-spacing section-paragraph">
+Class definitons cannot be empty, but if you for some reason have a class definition with no content, put in the pass statement to avoid errors.    
+      </p>
+      <header class="line-spacing section-sub-header" id="inheritance">Inheritance</header>
+      <p class="line-spacing section-paragraph">
+Inheritance allows us to define a class that inherits all the methods and properties from another class. Parent class is the class being inherited from, also called base class. Child class is the class that inherits from another class, also called derived class.
+      </p>
+      <p class="section-paragraph underline indent-medium">Parent Class</p>
+      <p class="line-spacing section-paragraph indent-medium">
+ Any class is a Parent class. You have been using this in the examples so far.
+      </p>
+      <p class="section-paragraph indent-medium">
+        <span class="line-spacing span">
+          <code class="code">class Car:</code>
+          <br>
+          <code class="code-indent-1">def __init__(self, model, type):</code>
+          <br>
+          <code class="code-indent-2">self.model = model</code>
+          <br>
+          <code class="code-indent-2">self.type = type</code>
+          <br>
+          <br>
+          <code class="code-indent-1">def printMe(self)</code>
+          <br>
+          <code class="code-indent-2">print(&quot;This car is a &quot; + p1.model + &quot;&nbsp;&quot; + p1.type)</code>
+          <br>
+          <br>
+          <code class="code"># Create an instance of 'Car' and use its printMe function</code>
+          <br>
+          <br>
+          <code class="code">p1 = Car(&quot;Ford&quot;, &quot;Saloon&quot;)</code>
+          <br>
+          <code class="code">p1.printMe()</code>
+          <br>
+        </span>
+      </p>
+      <p class="section-paragraph underline indent-medium">Child Class</p>
+      <p class="line-spacing section-paragraph indent-medium">
+To create a class that inherits the functionality from another class, send the parent class as a parameter when creating the child class:
+      </p>
+      <p class="section-paragraph indent-medium">
+        <span class="line-spacing span">
+          <code class="code">class Van(Car):</code>
+          <br>
+          <code class="code-indent-1">pass</code>
+          <br>
+        </span>
+      </p>
+      <p class="line-spacing section-paragraph indent-medium">
+This declares a 'Van' to be a child calss of 'Car'. The 'pass' is used as a van has no differing functionality to that of a 'Car' (as it is defined so far).
+      </p>
+      <p class="section-paragraph underline indent-medium">Super Function</p>
+      <p class="line-spacing section-paragraph indent-medium">
+Python also has a super() function that will make the child class inherit all the methods and properties from its parent.
+      </p>
+      <p class="section-paragraph indent-medium">
+        <span class="line-spacing span">
+          <code class="code">class Van(Car):</code>
+          <br>
+          <code class="code-indent-1">def __init__(self, model, type):</code>
+          <br>
+          <code class="code-indent-2">super().__init__(model, type)</code>
+          <br>
+        </span>
+      </p>
+      <p class="section-paragraph underline indent-medium">Methods and Properties</p>
+      <p class="line-spacing section-paragraph indent-medium">
+You can also add new methods and properties to the child object
+      </p>
+      <p class="section-paragraph indent-medium">
+        <span class="line-spacing span">
+          <code class="code">class Van(Car):</code>
+          <br>
+          <code class="code code-indent-1">def __init__(self, model, type):</code>
+          <br>
+          <code class="code code-indent-2">super().__init__(model, type)</code>
+          <br>
+          <code class="code code-indent-2">self.doors = 4</code>
+          <br>
+          <br>
+          <code class="code code-indent-1">def describe(self):</code>
+          <br>
+          <code class="code code-indent-2">print(&quot;Van has &quot; + self.doors + &quot; on &quot; + self.type</code>
+          <br>
+        </span>
+      </p>
+    </section>
+    <div class="divider"></div>
+    <section class="main-section" id="libraries">
+      <header class="section-header">Libraries</header>
+      <p class="line-spacing section-paragraph">
+Consider a module to be the same as a code library. A file containing a set of functions you want to include in your application. There are a whealth of third party modules and built in modules that can be used and these help make Python such a rich and adaptable language. Usage:
+      </p>
+      <p class="line-spacing section-paragraph indent-medium">
+        <span class="line-spacing span">
+          <code class="code">import mymodule as mx</code>
+          <br>
+          <br>
+          <code class="code">a = mx.doThisThing()</code>
+          <br>
+        </span>
+      </p>
+      <p class="line-spacing section-paragraph">
+ Some of the more common modules to draw upon:
+      </p>
+      <ul class="line-spacing list indent-large">
+        <li><em>NumPy</em> is short for "Numerical Python".</li>
+        <li><em>Pandas</em> is used to analyze data.</li>
+        <li><em>SciPy</em> is a scientific computation library that uses NumPy underneath.</li>
+        <li><em>Django</em> makes it easier to build web pages using Python.</li>
+        <li><em>PyGame</em> is used for game development</em>
+        <li><em>TensorFlow</em> is used for machine learning</li>
+        <li><em>Matplotlib</em> is a 2D graph plotting library.</li>
+        <li><em>BeautifulSoup</em> library is used for web scraping.</li>
+      </ul>
+      <p class="line-spacing section-paragraph">
+Each module is a topic in itelf and beyond the scope of this document. The above list is by no means an exhaustive list of the available and is more to be taken as illustrative of the breadth of topics that Python can be used in.
+      </p>
+    </section>
+    <div class="divider"></div>
+    <section class="main-section" id="reference">
+      <header class="section-header">Reference</header>
+      <p class="line-spacing section-paragraph">
+Whilst every effort has been made to ensure accuracy of this page, it is not meant to be a exhaustive description of the Python language and its features but rather an overview of its main functionality and syntax. The majority of content has been gleaned from <a id="reference-link"  target="_blank" href="https://www.w3schools.com/python/default.asp">w3schools</a> Web Pages, and it is recommended that you check this web site out to fully understand the language.
+      </p>
+    </section>
+  </main>
+</body>

@@ -1,0 +1,197 @@
+/* High level styling */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: lightblue;
+}
+
+em {
+  font-weight: 900;
+}
+
+/* Styling for the navigaton bar */
+#navigation-header {
+  font-size:24px;
+  height: 10%;
+  background-color: black;
+  color: white;
+}
+#navbar {
+  background-color: gray;
+  text-align: center;
+  position: fixed;
+  width:30%;
+  height: 100%;
+  float: left;
+  top: 0;
+  left: 0;
+  overflow: auto;      /* Adds scrollbar if needed */
+  white-space: nowrap; /* Adds scrollbar if needed */
+}
+#navbar ul {
+  font-size: 16px;
+  list-style: none;
+  text-align: center;
+  margin: 5%;
+  padding-left: 0;
+}
+#navbar li {
+  background-color: black;
+  border: 2px solid white;
+  border-radius: 40px;
+  padding: 3% 5%;
+}
+#navbar li ul {
+  display: none;
+}
+#navbar li label span {
+  border-radius: 100%;
+  background-color: white;
+  color: black;
+}
+#navbar li:hover label ul {
+  font-size: 14px;
+  display: block;
+  height: 30%;
+}
+#navbar li:hover {
+  background-color: gray;
+  border: 0;
+}
+
+.nav-link:link {    color: white; }
+.nav-link:visited { color: orange;  }
+.nav-link:hover {   color: white; }
+.link:link {    color: white; }
+.link:visited { color: orange;  }
+.link:hover {   color: white; }
+
+/* More general styling for main document */
+
+/* Named elements 1st */
+#main-doc {
+  width: 70%;
+  postion: relative;
+  float: right;
+}
+#main-header {
+  margin: 0;
+  text-align: center;
+  background-color: black;
+  color: white;
+  width: 100%;
+}
+#reference-link:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Classes next */
+.line-spacing {
+  margin: 0;
+  padding: 0;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+.section-header {
+  padding-left: 2%;
+  font-size: 20px;
+  text-decoration: underline;
+}
+.section-sub-header {
+  padding-left: 5%;
+  font-size: 16px;
+  line-height: 1;
+  text-decoration: underline;
+}
+.section-paragraph {
+  font-size: 14px;
+  padding-left: 5%;
+  padding-bottom: 0;
+}
+.list {
+  font-size: 14px;
+  padding-left: 10%;
+}
+.span {
+  display: block;
+  vertical-align: middle;
+  width: 75%;
+  font-size: 12px;
+  margin: 0;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  border: 2px solid red;
+}
+.code {
+  width: 100%;
+}
+.code-indent-1 {
+  padding-left: 5%;
+}
+.code-indent-2 {
+  padding-left: 10%;
+}
+
+/* Some handy generic stylings */
+.divider {
+  border-bottom: 5px solid black;
+  margin: 0;
+}
+.underline {
+  text-decoration: underline;  
+}
+.indent-medium {
+  padding-left: 10%
+}
+.indent-large {
+  padding-left: 15%;
+}
+
+/* For small screens, the navbar is a drop-down list */
+@media screen and (max-width: 1000px) {
+  #navigation-header {
+    font-size: 15px;
+  }
+  #navbar {
+    font-size: 8px;
+    display: block;
+    width: 20%;
+    height: 5%;
+    overflow: hidden;      /* Adds scrollbar if needed */
+  }
+  #navbar ul {
+    margin: 0;
+  }
+  #navbar li {
+    display: none;
+    background-color: #f9f9f9;
+  }
+    /* Stop these sub-menus from appearing on small screens */
+  #navbar:hover li label span,
+  #navbar:hover li label ul {
+    display: none;
+  }
+  /* Makes mouse behaviour on touch screens */
+  #navbar:hover, #navbar:active {
+    height: 100%;
+    width: 60%;
+    display: block
+  }
+  #navbar:hover li {
+  display: block;
+  
+  background-color: black;
+  color: white;
+  position: relative;   
+  }
+  #main-doc {
+  width: 100%;
+  postion: fixed;
+    top: 10%;
+  z-index: 0;
+  }
+  .code {
+  font-size: 10px;
+  }
+}
