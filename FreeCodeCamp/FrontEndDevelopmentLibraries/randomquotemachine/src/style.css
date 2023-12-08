@@ -1,0 +1,58 @@
+
+body{
+  background-color: teal;
+}
+
+h1 {
+  margin: 5%
+}
+h2 {
+  margin: 5%
+}
+h3 {
+  margin: 5%
+}
+
+.quote {
+  border-style: solid;
+}
+
+#quote-title {
+  text-align: center;
+}
+
+#quote-box {
+  max-width: 1000px;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 10px;
+  background-color: teal
+}
+
+#author {
+  text-align: right;
+}
+
+#button-row {
+  margin: auto;
+  margin-top: 10%;
+  margin-bottom: 1%;
+  padding: 15px;
+  background-color: lightseagreen
+}
+
+.btn-change{
+    background: lightseagreen;
+    float: left;
+    box-shadow: 0 0 1px #ccc;
+    -webkit-transition: all 0.5s ease-in-out;
+    border: 0px;
+    color: #fff;
+}
+
+.btn-change:hover{
+    -webkit-transform: scale(1.3);
+    background: #31708f;
+}
+
