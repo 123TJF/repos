@@ -1,0 +1,295 @@
+/* Define all colors as variables                     */
+/* Most ehights and widths are defined in percentages */
+/* where this isn;t the case they are defined as      */
+/* variables                                          */
+* {
+  /* Colors */
+  --body-bg-color: gray;
+  --body-fg-color: black;
+  --header-bg-color: lightgreen;
+  --header-fg-color: white;
+  --header-border-color: black;
+  --nav-link-color: lightgreen;
+  --nav-link-fg-color: black;
+  --hover-bg-color: yellow;
+  --hover-fg-color: black;
+  --section-color: blue;
+  --section-font-color: white;
+  --border-color: white;
+  --copyright-color: white;
+  --logo-color: lightgreen;
+  --flash-sale-color: red;
+  
+  /* Widths and Heights */
+  --header-height: 75px;
+  --anchor-height: 75px;
+  --anchor-neg-height: -75px;
+  --catalog-height: 350px;
+  
+  /* orientation of catalog */
+  --catalog-orientation: row;
+  
+  /* Font Size(s) */
+  --font-very-large: 28px;
+  --font-large: 25px;
+  --font-medium: 20px;
+  --font-small: 16px;
+  --font-tiny: 14px;
+  --font-very-tiny: 5px; 
+}
+html {
+  font-family: 'Open Sans', sans-serif; 
+}
+body {
+  background-color: var(--body-bg-color);
+  font-size: var(--font-medium);
+  margin: 0;
+  padding: 0;
+  
+  background-image: url(https://images.pexels.com/photos/2470655/pexels-photo-2470655.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-size: cover;
+}
+
+/* This is used to allow space for the header 
+  when a page link is pressed. Without this 
+  the header covers up part of the element
+  you've jumped to.
+ */
+.anchor {
+	padding-top: var(--anchor-height) !important;
+	margin-top: var(--anchor-neg-height) !important;
+}
+/* Any HTML linked to this class will be highlighted.
+   Used to show sale(s) and offer(s)
+ */
+.flash-sale {
+  background-color: var(--flash-sale-color);
+  color: white;
+}
+/* Screen Reader Only - don't display */
+.sr_only {
+  display: none !important;
+}
+/* Separator between sections */
+.divider {
+  border-bottom: 1px solid var(--border-color);
+  margin: 2px 0;
+}
+
+/* Header CSS, including navigation bar */
+#header {
+  box-sizing: border-box;
+  background-color: var(--header-bg-color);
+  color: var(--header-fg-color);
+  font-size: var(--font-large);
+  height: var(--header-height);
+  border: 2px solid var(--header-border-color);
+  display: flex;
+  flex-direction: row;
+  position: sticky;
+  top: 0; 
+  left: 0; 
+  right: 0;
+  margin: auto;
+  z-index:1000;
+}
+
+/* Logo is an image and text together */
+#company-logo {
+  font-size: var(--font-medium);
+  background-color: var(--logo-color);
+  display: flex;
+  flex-direction: row;
+}
+#header-img {
+  position: relative;
+  height: 90%;
+  margin: 0;
+  padding: 0;
+}
+#company-text {
+  display: flex;
+  flex-direction: column; 
+}
+
+/* Navigation bar */
+#nav-bar {
+  display: flex;
+  flex-direction: row; 
+  margin: auto;
+  margin-right: 0;
+  padding-right: 2%;
+  width: 40%;
+}
+.nav-link {
+  font-size: var(--font-small);
+  background-color: var(--nav-link-color);
+  color: var(--nav-link-fg-color);
+  border: 2px solid var(--border-color);
+  padding: 2%;
+  margin: auto;
+}
+.nav-link:hover {
+  background-color: var(--hover-bg-color);
+  color: var(--hover-fg-color);
+}
+
+/* Sections */
+.section {
+  margin: auto;
+  padding: 2%;
+}
+.section-top {
+  width: 100%;
+  background-color: var(--section-color);
+  color: var(--section-font-color);
+}
+
+/* About Us */
+.company-description {
+  width: 30%;
+  padding: 0 2%;
+  margin: auto;
+}
+
+/* How to grow */
+.video-flex {
+  display: flex;
+  flex-direction: row;
+}
+.video {
+  margin: auto;
+}
+
+/* Catalog this has extra CSS as it has extra lines 
+   of text in the header and a link to a full catalog
+ */
+.catalog-section {
+  display: flex;
+  flex-grow: 1;
+  margin: 0;
+  padding: 0;
+}
+.catalog-section p {
+  font-weight: 900;
+  padding: 0;
+  margin: auto;
+  align-items: center;
+  margin-left: 5%;
+  margin-right:5%;
+  font-size: var(--font-large);
+}
+.catalog-section div {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+.catalog-section label {
+  font-size: var(--font-small);
+  padding-top: 2%;
+  padding-bottom: 2%;
+  height: auto;
+}
+.div-btn {
+  margin: auto;
+  margin-right: 0;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.catalog {
+  margin: auto;
+  margin-top: 3%;
+  display: flex;
+  flex-direction: var(--catalog-orientation);
+  text-align: center;
+  width: 95%;
+  height: var(--catalog-height);
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  background-color: var(--section-color);
+  color: var(--section-font-color);
+  border: 1px solid var(--border-color);
+}
+.catalog-item {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+}
+.catalog-item div {
+  height: 100%;
+  width: 100%;
+}
+.plant {
+  width: 300px;
+  height: 200px;
+}
+.catalog-button {
+  background-color: var(--nav-link-color);
+  color: var(--nav-link-fg-color);
+  border: 1px solid var(--border-color);
+}
+.catalog-button:hover {
+  background-color: var(--hover-bg-color);
+  color: var(--hover-fg-color);
+}
+
+/* Section for emails */
+#email {
+  font-size: var(--font-very-large);
+  height: 10%;
+  width: 50%;
+}
+#submit {
+  font-size: var(--font-very-large);
+  background-color: var(--section-color);
+  color: var(--section-font-color);
+  height: 10%;
+  width: 20%;  
+}
+
+/* I've used some free to use images, so acknowledge */
+.copyright {
+  font-size: var(--font-very-tiny);
+  color: var(--copyright-color);
+  text-align: right;
+}
+
+@media screen and (max-width: 1000px) {
+  
+  * {
+    /* Adjust fonts to be smaller */
+    --font-very-large: 20px;
+    --font-large: 18px;
+    --font-medium: 16px;
+    --font-small: 14px;
+    --font-tiny: 12px;
+    --font-very-tiny: 8px;
+    /* change orientation of calalog entries */
+    --catalog-orientation: column;
+  }
+  /* Remove the 2nd video */
+  #video {
+    align-self: center;
+  }
+  #video0 {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  /* Adjust fonts to be even smaller */
+  * {
+    --font-very-large: 16px;
+    --font-large: 14px;
+    --font-medium: 12px;
+    --font-small: 10px;
+    --font-tiny: 10px;
+    --font-very-tiny: 8px;
+  }
+}
