@@ -1,7 +1,7 @@
 /* Updated FCC task.        */
 /* 1. Improved Color Scale  */
 /* 2. Improved Legend       */
-/* With the FCC tests       */
+/* Without the FCC tests    */
 const WIDTH = 960;
 const HEIGHT = 600;
 
@@ -11,7 +11,7 @@ const boxSize = 35;
 const mapSource = 'https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/counties.json';
 const dataSource = 'https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/for_user_education.json';
 
-// https://observablehq.com/@d3/color-schemes - Cool
+// https://observablehq.com/@d3/color-schemes - 'Cool'
 const colors =
 ["#6e40aa", "#5e57cb", "#4775de", "#2f96e0", "#1eb8d0", "#1ad5b1", "#28ea8d", "#4af56c", "#79f659", "#aff05b"];
 
