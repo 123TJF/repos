@@ -1,5 +1,5 @@
-/* FCC Data Visualisation challenge */
-/* Version with FCC tests in it.    */
+/* Version used for FCC data visualisation challenge */
+/* Without the FCC test suite                        */
 const HEIGHT = 500;
 const WIDTH  = 1200;
 const PADDING = 100;
