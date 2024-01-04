@@ -1,0 +1,59 @@
+<body>
+  <form onChange="algorithmSelected()">  
+    <fieldset id="choice-container">
+  <!-- I don't want a legend --
+      <legend> Please choose a dataset </legend> 
+    -->
+      <label class="challenge-choose" for="radio1">
+        <input type="radio"
+             id="radio1" 
+             class="challenge-choice" 
+             name="challenge-choice" 
+             value="0"
+             checked="checked"/>
+        <span>Palindrome Checker</span>
+      </label>
+
+      <label class="challenge-choose" for="radio2">
+        <input type="radio" 
+             id="radio2" 
+             class="challenge-choice" 
+             name="challenge-choice" 
+             value="1"/>  
+        <span>Roman Numeral Converter</span>
+      </label>
+
+      <label class="challenge-choose" for="radio3">
+      <input type="radio" 
+                 id="radio3" 
+                 class="challenge-choice" 
+                 name="challenge-choice" 
+                 value="2"/>   
+        <span>Caesars Cipher</span>
+      </label>
+
+      <label class="challenge-choose" for="radio4">
+      <input type="radio" 
+                 id="radio4" 
+                 class="challenge-choice" 
+                 name="challenge-choice" 
+                 value="3"/>   
+        <span>Telephone Number Validator</span>
+      </label>
+
+          <label class="challenge-choose" for="radio5">
+      <input type="radio" 
+                 id="radio5" 
+                 class="challenge-choice" 
+                 name="challenge-choice" 
+                 value="4"/>   
+        <span>Cash Register</span>
+      </label>
+    </fieldset>
+  </form>
+    
+  <div class="break"></div>
+  <!-- React Hook -->
+  <div id="activity"></div>
+  <div class="break"></div>  
+</body>

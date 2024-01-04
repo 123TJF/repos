@@ -1,0 +1,245 @@
+* {
+  // General Colors
+  --background-color: lightblue;
+  --pen-color: black;
+  --border-color: black;
+  
+  // The colors used in challenge layout
+  --description-color: black;
+  --challenge-background: black;
+  --challenge-pen-color: white;
+  
+  // Cash register specific challenge
+  --cash-reg-inp-color: brown;
+  --cash-reg-out-color: brown;
+  --money-color: black;
+  --money-pen-color: white;
+  
+  // Standard button colors across
+  // buttons including radios
+  --button-color: blue; 
+  --button-checked-color: red;
+  --button-hover-color: green;
+  --button-pen-color: white; 
+ 
+  // Tooltips
+  --tooltip-color: #555;
+  --tooltip-pen-color: white;
+  
+  // Font Sizes
+  --font-very-large: 26px;
+  --font-large: 20px;
+  --font-medium: 16px;
+  --font-small: 12px;
+}
+body {
+  background-color: var(--background-color);
+  color: var(--pen-color);
+  font-size: var(--font-medium);
+}
+
+#choice-container {
+  background-color: var(--background-color);
+  text-align: center;
+  display: block;
+  border: 0;
+
+  .challenge-choose input {
+    padding: 0.5% 3% 0.5% 3%;
+    
+    /* Remove the default radio button selection */
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  .challenge-choose input:checked {
+    accent-color: var(--button-checked-color);
+  }
+  .challenge-choose input ~ span {
+    border: 2px solid var(--border-color);
+    background-color: var(--button-color);
+    color: var(--pen-color);
+    cursor: pointer;
+    padding: 0.5% 3% 0.5% 3%;
+    margin: auto;
+    
+    transition: background-color 1s,
+                color 1s;
+  }
+  .challenge-choose input:checked ~ span {
+     background-color: var(--button-checked-color);  
+  }
+  .challenge-choose:hover input ~ span {
+    background-color: var(--button-hover-color);
+    color: var(--main-pen);
+  }
+}
+
+// Top level div for 1-4
+.challenge-div {
+  background-color: var(--challenge-background);
+  color: var(--challenge-pen-color);
+  font-size: var(--font-large);
+  margin: 2%;
+  padding: 2%;
+  
+  .description {
+    background-color: var(--description-color);
+    font-size: var(--font-large);
+    text-align: center;
+    margin: auto;
+    padding: 0;
+  }
+  .desc-text {
+    background-color: var(--description-color);
+    font-size: var(--font-medium);
+    text-align: left;
+  }
+  .data-input {
+    font-size: var(--font-large);
+    width: 80%;
+  }
+  .submit-button {
+    font-size: var(--font-large);
+    width: 10%;
+    transition: background-color 1s;
+  }
+  .submit-button:hover {
+    background-color: var(--button-hover-color);
+  }
+}
+
+#cash-register-details {
+  
+  #challenge-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+ 
+    .register-display-panel {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      
+      .input-field {
+        display: flex;
+        flex-direction: row;
+
+        .field-label {
+          margin-right: auto;
+        }
+        .field-input {
+          margin-left: auto;
+          width: 60%;
+        }
+      }
+      .cash-and-change {
+        display: flex;
+        flex-direction: column;
+        margin: 1%;
+        border: 2px solid var(--border-color);
+        font-size: var(--font-medium);
+       
+        .money-line {
+          display: flex;
+          flex-direction: row;
+          background-color: var(--money-color);
+          color: var(--money-pen-color);
+          .currency-label {
+            background-color: var(--money-color);
+            width: 80%;
+          }
+          .currency {
+            width: 20%;
+            text-align: left;
+          }
+        }
+      }
+    }
+    #register-inputs {
+      background-color: var(--cash-reg-inp-color);
+      
+      .button-bar {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        
+        .div-width {
+           width: 100%;
+        }
+        #dropdown {
+          background-color: var(--button-color);
+          color: var(--button-pen-color);
+          transition: background-color 1s;
+          width: 100%;
+        }
+        #dropdown:hover {
+          background-color: var(--button-hover-color);
+        }
+        .butonbar-button {
+          width: 100%;
+          background-color: var(--button-color);
+          transition: background-color 1s;
+          color: var(--button-pen-color);
+        }
+        .butonbar-button:hover {
+          background-color: var(--button-hover-color);
+        }
+      }
+    }
+    #register-outputs {
+      background-color: var(--cash-reg-out-color);
+    }
+  }
+}
+
+.break {
+  margin: 1%;
+  border: 5px solid transparent;
+  border-top: 5px solid var(--border-color);
+  border-bottom: 5px solid var(--border-color);
+}
+.break-vertical {
+  margin: 1%;
+  border: 5px solid transparent;
+  border-left: 5px solid var(--border-color);
+  border-right: 5px solid var(--border-color);
+}
+
+// Tooltips
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  background-color: var(--tooltip-color);
+  color: var(--tooltip-pen-color);
+  visibility: hidden;
+  width: 200px;
+
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
