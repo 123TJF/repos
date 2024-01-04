@@ -1,7 +1,7 @@
 The MIT License (MIT)
 
-Copyright (c) 2024 Trevor (https://codepen.io/Trevor_F/pen/vYvgQdr)
-Fork of an original work Javascript Calculator (https://codepen.io/Trevor_F/pen/vYvgQdr)
+Copyright (c) 2024 Trevor (https://codepen.io/Trevor_F/pen/XWoNxar)
+Fork of an original work Javascript Calculator (https://codepen.io/Trevor_F/pen/XWoNxar)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

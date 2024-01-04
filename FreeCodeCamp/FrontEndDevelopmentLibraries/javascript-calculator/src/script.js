@@ -181,29 +181,42 @@ class Button extends React.Component {
     const operatorWithOptionalMinus = /((\+|x|\-|\.|\/)\-?)$/
     const operator                  = /[0-9]+(\+|x|\-|\/?)$/
     const minusOperator             = /^\-$/
+    const equalSign                 = /\=/
     
     if (equation!="") {
+      
+      // First a couple of checks against the current euquation
+      // prior to delving into the new character
+      
+      // it is starting with a '-'
       if (minusOperator.test(equation)) {
           /* Do nothing, this is a negative number at start of equation */
+      } else
+        
+      // has the equal sign been pressed previously?
+      // if so, remove everything before the equal
+      // and add the current char to new equation being formed
+      if (equalSign.test(equation)) {
+        equation=equation.replace(/.*\=(.*)/, '$1');
+        equation=equation+currCh;
       } else {
-        // has the equal sign been pressed previously?
-        if (/\=/.test(equation)) {
-          equation=equation.replace(/.*\=(.*)/, '$1');
-          equation=equation+currCh;
-        } else
+        
         // Minus has to be treat differently due to negative numbers 
         if (minusOperator.test(currCh)) {
-          // Another operator, so append
+          // There is already another operator at end of euqation, 
+          // so append to start a negative number
           if (operator.test(equation)) {
             equation=equation+currCh
           } else {
+            // Replace the existing operator
             equation=equation.replace(operatorWithOptionalMinus, currCh);
           }
         } 
-        // Other operator
+        // Lastly check if it is any other kind of operator, which gets replaced
         else if (operatorWithOptionalMinus.test(equation)) {
           equation=equation.replace(operatorWithOptionalMinus, currCh);
         } else {
+          // Otherwise it is an ordinary digit (0-9) and gets added
           equation = equation + currCh;
         }
       }
