@@ -1,0 +1,284 @@
+* {
+   /* Widths and Heights */
+  --header-height: 75px;
+  --anchor-height: 75px;
+  --anchor-neg-height: -75px;
+  --project-icon-height: 120px;
+  
+  /* Colors */
+  --main-background-color: lightblue;
+  --main-pen-color: black;
+  
+  --portfolio-divider-color: black;
+  --section-divider-color: blue;
+  
+  --navbar-background: blue;
+  --navbar-foreground: yellow;
+  --navbar-button-background: green;
+  --navbar-button-color: white;
+  --navlink-border-color: white;
+  --link-hover-background: red;
+ 
+  --welcome-section-color: lightblue;
+  --welcome-section-h1-color: black;
+  --welcome-section-h2-color: brown;
+  
+  --section-head-background: black;
+  --section-pen-color: white;
+
+  --project-border-color: blue;
+  --project-border-hover-color: red;
+  --project-title-color: white;
+  --project-title-background: black;
+  --project-item-background: gray;
+  --project-item-pen: white;
+  --project-item-hover-background: black;
+  --project-item-hover-color: white;
+  --project-link-hover-border: red;
+  
+  /* Font Size(s) */
+  --font-very-large: 50px;
+  --font-large: 30px;
+  --font-medium: 20px;
+  --font-small: 16px;
+  --font-tiny: 14px;
+  --font-very-tiny: 5px; 
+}
+@media screen and (max-width: 1000px) {
+  /* Adjust fonts to be smaller */  
+  * {
+    --font-very-large: 30px;
+    --font-large: 20px;
+    --font-medium: 15px;
+    --font-small: 10px;
+    --font-tiny: 8px;
+    --font-very-tiny: 8px;
+  }
+}
+@media screen and (max-width: 500px) {
+  /* Adjust fonts to be even smaller */
+  * {
+    --font-very-large: 16px;
+    --font-large: 14px;
+    --font-medium: 12px;
+    --font-small: 10px;
+    --font-tiny: 10px;
+    --font-very-tiny: 8px;
+  }
+}
+html {
+  font-family: 'Open Sans', sans-serif; 
+}
+body {
+  background-color: var(--main-background-color);
+  color: var(--main-pen-color);
+  
+  /* Removes margins around sections and headers */
+  margin: 0; 
+}
+
+/* This is used to allow space for the header 
+  when a page link is pressed. Without this 
+  the header covers up part of the element
+  you've jumped to.
+ */
+.anchor {
+	padding-top: var(--anchor-height) !important;
+	margin-top: var(--anchor-neg-height) !important;
+}
+
+/* Required to pass FCC test
+   Welcome section must be same height as viewport
+ */
+.under-header {
+  height: var(--header-height);
+}
+
+/* Text for screen readers only */
+.sr-only {
+  display: none !important;
+}
+
+/* Section Dividers */
+.section-divider {
+  border: 2px solid var(--section-divider-color);
+  margin: 0;
+}
+.portfolio-divider {
+  border: 2px solid var(--portfolio-divider-color);
+  margin: 0;
+}
+
+/* Top of screen menu */
+#navbar {
+  position: sticky; /* FCC test navbar stay at top on scroll */
+  top: 0;           /* FCC test navbar stay at top on scroll */
+  background-color: var(--navbar-background);
+  height: var(--header-height);
+  width: 100%;
+  display: flex;
+  flex-direction: row; 
+  justify-content: right;
+  align-content: center;
+}
+
+/* Make header links look like buttons */
+.nav-link {
+  color: var(--navbar-button-color);
+  background-color: var(--navbar-button-background);
+  border: 2px solid var(--navlink-border-color);
+  padding: 1%;     /* Use padding to make it like a button */
+  margin: 1% 2%;   /* Center vertically, left & right 2%   */
+  transition: margin 1s,
+              background-color 1s,
+              color 1s;
+}
+.nav-link:hover {   
+  background-color: var(--link-hover-background);
+  color: var(--navbar-button-color);
+  margin: 0 2%;
+}
+/* Remove indicators that this is a link */
+#navbar .nav-link:link {    color: var(--navbar-button-color); }
+#navbar .nav-link:visited { color: var(--navbar-button-color); }
+#navbar .nav-link:active {  color: var(--navbar-button-color); }
+
+/* Welcome Section */
+#welcome-section {
+  height: 100vh !important; /* FCC test: 100% of viewport */
+  background-color: var(--welcome-section-color);
+}
+#welcome-section h1 {
+  font-size: var(--font-very-large);
+  color: var(--welcome-section-h1-color);
+  text-align: center;
+}
+#welcome-section h2 {
+  font-size: var(--font-large);
+  color: var(--welcome-section-h2-color);
+  text-align: center;
+}
+
+/* Profile */
+.profile-title {
+  background-color: var(--section-head-background);
+  color: var(--section-pen-color);
+  font-size: var(--font-very-large);
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  margin-top: 0;
+}
+.profile-title a {
+  transition: background-color 1s;
+}
+.profile-title a:hover {
+  background-color: var(--link-hover-background);
+  text-underline-position: under;
+}
+.profile-title label {
+  font-size: var(--font-very-large);
+}
+.FCC-certificate-type {
+  color: var(--main-pen-color);
+  font-size: var(--font-medium);
+  text-decoration-line: underline;
+  text-align: center;
+}
+.FCC-certificate-type label {
+  font-size: var(--font-large)
+}
+
+/* Projects */
+.project-tile {
+  color: var(--project-item-pen);
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  text-align: center;
+  overflow-x: auto;
+}
+.project-item {
+  border: 5px solid var(--project-border-color);
+  background-color: var(--project-item-background);
+  display: flex;
+  flex-direction: column;
+  margin: 1%;
+  padding: 5px;
+  transition: background-color 1s,
+              color 1s;
+}
+.project-item:hover {
+  background-color: var(--project-item-hover-background);
+  color: var(--project-item-hover-color);
+  border: 5px solid var(--project-border-hover-color);
+}
+.project-title {
+  font-size: var(--font-tiny);
+  color: var(--project-title-color);
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1%;
+  text-align: center;
+}
+.project-detail {
+  font-size: var(--font-tiny);
+  color: var(--project-title-color);
+  text-align: left;
+}
+.tech-list {
+  font-size: var(--font-tiny);
+  color: var(--project-title-color);
+  text-align: left;
+}
+.project-icon {
+  height: var(--project-icon-height);
+  border: 2px solid var(--project-border-color);
+}
+.unfinished {
+  height: var(--project-icon-height);
+  border: 2px solid var(--project-border-color);
+  font-size: var(--font-very-large);
+  margin: 0;
+  padding: 0;
+}
+.project-link { text-decoration: none; /* no underline */  }
+.project-link:link {    color: var(--project-item-pen); }
+.project-link:visited { color: var(--project-item-pen); }
+.project-link:active {  color: var(--project-item-pen); }
+
+.project-certificate {
+  transition: background-color 1s;
+}
+.project-certificate:hover {
+  background-color: var(--link-hover-background);
+  color: var(--project-item-hover-color);
+}
+
+.contact-details,
+.contact details h1,
+.contact-details h1 a
+{
+  text-align: center;
+  font-size: var(--font-medium);
+  padding: 0;
+  margin: 0;
+  transition: font-size 1s,
+              padding-top 1s;
+}
+.contact-details h1 a:hover {
+  font-size: var(--font-large);
+  padding-top: 30px;
+}
+
+/* Yes, below aren't declared as vars       */
+/* this class is temporary. Once fully live */
+/* links will be enabled and this class will*/
+/* disapear                                 */
+.disabled {
+  background-color: red;
+  color: white;
+}
+
+
+
