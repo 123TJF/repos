@@ -1,5 +1,6 @@
-/* Version used for FCC data visualisation challenge */
-/* Without the FCC test suite                        */
+/* Version with improved color chart. */
+/* And legend generator               */
+/* And the FCC test suite             */
 const HEIGHT = 500;
 const WIDTH = 1200;
 const PADDING = 100;
@@ -10,120 +11,98 @@ const dataSource = "https://raw.githubusercontent.com/freeCodeCamp/ProjectRefere
 const monthNames = ["January", "February", "March", "April", "May", "June",
 "July", "August", "September", "October", "November", "December"];
 
-// Mapping of colours to temperature
-const colors = [[2, "blue"],
-[4, "#4169E1"],
-[6, "#00BFFF"],
-[8, "#E6E6FA"],
-[10, "#FFA500"],
-[12, "red"]];
+// https://observablehq.com/@d3/color-schemes - Sequential size 10 Spectral + 2 from RdBu 
+const colors =
+["#9e0142", "#d53e4f", "#f46d43", "#fdae61", "#fee08b", "#ffffbf", "#e6f598", "#abdda4", "#66c2a5", "#3288bd", "#5e4fa2", "#2166ac", "#053061"];
 
-// Returns a color based on the temparature
-function colorChart(temperature) {
-  for (let x = 0; x < colors.length; x++) {
-    if (temperature <= colors[x][0]) return colors[x][1];
-  }
-  return "red";
-}
-
-// Add a key to the two colors used - two small rectangles + two labels
-function addLegend() {
-  const canvas = d3.select("#svg_chart");
-  const legend = canvas.append("svg").attr("id", "legend");
-  const boxSize = 35; // Size of the color squares
-  const txtOffset = 25; // Offset from the color squares
-  const boxYPos = boxSize * 2; // Where to position the boxes based on size
-  const txtYPos = boxSize * 2 - txtOffset; // Where to position text based on size
-
-  // Just a label
-  legend.append("text").
-  attr("x", PADDING + boxSize).
-  attr("y", HEIGHT - 10).
-  style("font-size", "16px").
-  text("Legend - temperature/color mapping");
-
-  // Loops round building boxes and number to represent the legend key
-  for (let x = 0; x < colors.length; x++) {
-    // Colored square
-    legend.append("rect").
-    attr("x", PADDING + (x + 1) * boxSize).
-    attr("y", HEIGHT - boxYPos).
-    attr("width", boxSize).
-    attr("height", boxSize).
-    style('fill', colorChart(colors[x][0]));
-    // 'tick' mark
-    legend.append("line").
-    attr("x1", PADDING + (x + 2) * boxSize).
-    attr("y1", HEIGHT - boxYPos).
-    attr("x2", PADDING + (x + 2) * boxSize).
-    attr("y2", HEIGHT - txtOffset).
-    style("stroke", "black").
-    style("stroke-width", 1);
-    // Scale value
-    legend.append("text").
-    attr("x", PADDING + ((x + 2) * boxSize - 12)).
-    attr("y", HEIGHT - txtOffset).
-    style("font-size", "10px").
-    text(colors[x][0]);
-  }
-}
-
-// Chart Title(s)
-function setChartTitles(temperature) {
-  const canvas = d3.select("#svg_chart");
-  canvas.append("text").
-  attr("x", PADDING + 50).
-  attr("y", PADDING - 50).
-  attr("id", "title").
-  style("font-size", "24px").
-  text("Monthly Global Land-Surface Temperature");
-  canvas.append("text").
-  attr("x", PADDING + 50).
-  attr("y", PADDING - 30).
-  attr("id", "description").
-  style("font-size", "16px").
-  text("1753 - 2015: base temperature " + temperature);
-}
-
-function setUpChart(temperature) {
-  // A div containing the SVG, used to position in the HTML body
-  d3.select("body").append("div").
-  attr("id", "svg-div").
-  append("svg").attr("id", "svg_chart").
-  attr("width", WIDTH).
-  attr("height", HEIGHT);
-
-  // Div used for the tooltip
-  d3.select("body").append("div").
-  attr("id", "tooltip").
-  style("position", "absolute")
-  //.style("z-index", "10")
-  .style("opacity", 0);
-
-  setChartTitles(temperature);
-  addLegend();
-}
-
+// Builds X and Y scales
 function setScale(dataset) {
+
+  // Color Scale - based on temperature
+  const monthlyVariance = dataset.monthlyVariance;
+  const baseTemperature = dataset.baseTemperature;
+  const varianceArr = monthlyVariance.map(d => Math.round(baseTemperature + d.variance)).sort(function (a, b) {return a - b;});
+  const uniqArr = [...new Set(varianceArr)];
+
+  console.log(uniqArr);
+  const colorScale = d3.scaleOrdinal() // the scale function
+  .domain(uniqArr) // the data
+  .range(colors); // the color scale
+
+
   const SCREEN_RANGE_X = [PADDING, WIDTH - PADDING];
   const SCREEN_RANGE_Y = [PADDING, HEIGHT - PADDING];
 
   // Store years in an array for easier manipulation
-  const yearArr = dataset.map(d => new Date(d.year + "-01-01"));
+  const yearArr = monthlyVariance.map(d => new Date(d.year + "-01-01"));
 
   const minX = d3.min(yearArr, d => d);
   const maxX = d3.max(yearArr, d => d);
-  const minY = d3.min(dataset, d => d.month);
-  const maxY = d3.max(dataset, d => d.month);
+  const minY = d3.min(monthlyVariance, d => d.month);
+  const maxY = d3.max(monthlyVariance, d => d.month);
 
   const xScale = d3.scaleTime().domain([minX, maxX]).range(SCREEN_RANGE_X);
+
   // min and max adjusted by 0.5 to allow for height of 'boxes' to display
   const yScale = d3.scaleLinear().domain([minY - 0.5, maxY + 0.5]).range(SCREEN_RANGE_Y);
 
-  return [xScale, yScale];
+  const scales = {
+    x: xScale,
+    y: yScale,
+    c: colorScale };
+
+
+  return scales;
 }
 
-function addAxis(xScale, yScale) {
+// Add a key to the two colors used - two small rectangles + two labels
+function addLegend(scales) {
+  // Retrieve the color scale
+  const colorScale = scales.c;
+
+  const canvas = d3.select("#svg_chart");
+  const legend = canvas.append("svg").attr("id", "legend");
+  const boxSize = 25; // Size of the color squares
+  const txtOffset = 25; // Offset from the color squares
+  const boxYPos = 65; // Where to position the boxes based on size
+  const txtYPos = 65 - txtOffset; // Where to position text based on size
+  const scaleDomain = colorScale.domain(); // Need to get the scale values to display
+
+  // Just a label
+  legend.append("text").
+  attr("x", PADDING + boxSize).
+  attr("y", HEIGHT - 5).
+  style("font-size", "16px").
+  text("Temperature variation/Color mapping");
+
+  let entries = legend.selectAll('g.legendEntry').
+  data(colorScale.domain()).
+  enter().
+  append('g').attr('class', 'legendEntry');
+
+  // Colored Boxes
+  entries.append('rect').
+  attr('x', function (d, i) {return PADDING + i * boxSize;}).
+  attr('y', HEIGHT - boxYPos).
+  attr('width', boxSize).
+  attr('height', boxSize).
+  attr('fill', colorScale);
+
+  // Text description
+  entries.append('text').
+  attr('x', function (d, i) {return PADDING + i * boxSize + 2;})
+  // yStart+(boxSize/2)
+  .attr('y', HEIGHT - boxYPos + boxSize - 10).
+  style('font-size', '10px').
+  text(function (d, i) {return d + "ºC";});
+}
+
+// As per function title, adds axis to the chart
+function addAxis(scales) {
+  // Get data from the scal object
+  const xScale = scales.x;
+  const yScale = scales.y;
+
   const canvas = d3.select("#svg_chart");
   const xAxis = d3.axisBottom(xScale);
   const yAxis = d3.axisLeft(yScale).
@@ -178,12 +157,18 @@ function hideToolTip(event) {
   style('opacity', 0);
 }
 
-function drawChart(dataset, xScale, yScale) {
+// Main chart drawing function
+function drawChart(dataset, scales) {
+  // Retrieve the scale factors
+  const xScale = scales.x;
+  const yScale = scales.y;
+  const colorScale = scales.c;
+
   const base = dataset.baseTemperature;
   const temps = dataset.monthlyVariance;
 
-  // Build an array of years - used to calc the width
-  let years = temps.map(i => i.year).filter((year, index, arr) => arr.indexOf(year) == index);
+  // Build an array of years - used to calc the chart width
+  const years = temps.map(i => i.year).filter((year, index, arr) => arr.indexOf(year) == index);
   const rectWidth = (WIDTH - PADDING * 2) / years.length;
 
   // Builds colored rectangles
@@ -206,7 +191,7 @@ function drawChart(dataset, xScale, yScale) {
   attr("data-month", d => d.month - 1).
   attr("data-year", d => d.year).
   attr("data-temp", d => base + d.variance).
-  style("fill", d => colorChart(base + d.variance)).
+  style("fill", d => {return colorScale(Math.round(base + d.variance));}).
   on("mouseover", function (event, d) {
     return showToolTip(base, event, d);
   });
@@ -217,6 +202,46 @@ function drawChart(dataset, xScale, yScale) {
   on("mouseout", function () {hideToolTip(event);});
 }
 
+// Set up canvas and titles
+function setUpChart(temperature) {
+  // A div containing the SVG, used to position in the HTML body
+  d3.select("body")
+  // Append a div to house the chart
+  .append("div").
+  attr("id", "svg-div")
+
+  // Append the SVG chart
+  .append("svg").attr("id", "svg_chart").
+  attr("width", WIDTH).
+  attr("height", HEIGHT);
+
+  // Div used for the tooltip
+  d3.select("body").
+  append("div").
+  attr("id", "tooltip").
+  style("position", "absolute").
+  style("opacity", 0);
+
+
+  const canvas = d3.select("#svg_chart");
+
+  // Main title
+  canvas.append("text").
+  attr("x", PADDING + 50).
+  attr("y", PADDING - 50).
+  attr("id", "title").
+  style("font-size", "24px").
+  text("Monthly Global Land-Surface Temperature");
+
+  // sub-title
+  canvas.append("text").
+  attr("x", PADDING + 50).
+  attr("y", PADDING - 30).
+  attr("id", "description").
+  style("font-size", "16px").
+  text("1753 - 2015: base temperature " + temperature);
+}
+
 // Main Code
 const req = new XMLHttpRequest();
 req.open("GET", dataSource, true);
@@ -224,8 +249,10 @@ req.send();
 req.onload = function () {
   let xScale, yScale;
   const jsondata = JSON.parse(req.responseText);
+  const scales = setScale(jsondata);
+
   setUpChart(jsondata.baseTemperature);
-  [xScale, yScale] = setScale(jsondata.monthlyVariance);
-  addAxis(xScale, yScale);
-  drawChart(jsondata, xScale, yScale);
+  addAxis(scales);
+  addLegend(scales);
+  drawChart(jsondata, scales);
 };
