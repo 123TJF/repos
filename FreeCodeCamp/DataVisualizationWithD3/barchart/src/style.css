@@ -1,0 +1,27 @@
+body {
+  background-color: aquamarine;
+}
+#svg-div {
+  margin: 1%; 
+  background-color: aquamarine;
+  justify-content: center;
+}
+#tooltip {
+  background-color: white;
+  color: black;
+}
+svg {
+  background-color: grey;
+  display: block;
+  margin: auto;
+}
+.bar {
+  fill: blue;
+}
+.bar:hover {
+  fill: blue;
+}
+
+
+
+

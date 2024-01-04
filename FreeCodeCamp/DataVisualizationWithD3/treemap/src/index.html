@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Treemap Data</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet"/>
+</head>
+<body>
+  <form onChange="dataSetSelected()">  
+  <fieldset id="choice-container">
+<!-- I don't want a legend --
+    <legend> Please choose a dataset </legend> 
+  -->
+    <label class="dataset-choose" for="radio1">
+      <input type="radio"
+           id="radio1" 
+           class="dataset-choice" 
+           name="dataset-choice" 
+           value="videogame"
+           checked="checked"/>
+      <span>Video Game Data</span>
+    </label>
+   
+    <label class="dataset-choose" for="radio2">
+      <input type="radio" 
+           id="radio2" 
+           class="dataset-choice" 
+           name="dataset-choice" 
+           value="movie"/>  
+      <span>Movie Data</span>
+    </label>
+
+    <label class="dataset-choose" for="radio3">
+    <input type="radio" 
+               id="radio3" 
+               class="dataset-choice" 
+               name="dataset-choice" 
+               value="kickstarter"/>   
+      <span>Kickstarter Data</span>
+    </label>
+  </fieldset>
+  </form>
+ 
+  <!-- Can now start constructing the chart area -->
+  <h1 id="title">Videogame</h1>
+  <h2 id="description">Descritpion</h2>
+  
+  <div id="data-container">
+    <div id="legend-container">
+      <label id="legend-title">Legend</label>
+      <svg id="legend"></svg>
+    </div>
+    <div id="chart-container">
+      <!-- Use a div for the tooltip -->
+      <div id="tooltip">This is a tooltip</div>
+      <svg id="canvas"></svg>
+    </div>
+  </div>
+  <div id="divisor">&nbsp;</div>
+</body>
+</html>

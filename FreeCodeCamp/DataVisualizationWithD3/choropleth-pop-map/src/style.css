@@ -1,0 +1,14 @@
+#title, #description {
+  text-align: center;
+}
+
+#container-grid {
+  width: 100%;
+  text-align: center;
+  background-color: gray;
+}
+
+#svg-chart {
+  width:1000px
+}
+
