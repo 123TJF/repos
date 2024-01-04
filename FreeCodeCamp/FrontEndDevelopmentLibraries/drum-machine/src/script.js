@@ -47,6 +47,7 @@ const buttonBeats = [
   }
 ]
 /******************************************/
+/* Main Code */
 
 /* This component manages the keypad */
 class Btn extends React.Component {
