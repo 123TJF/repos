@@ -1,0 +1,90 @@
+body {
+  background-color: #2196F3;
+}
+
+button:hover {
+  background-color: red;
+  color: white;
+}
+
+h1 {
+  background-color: #2196F3;
+  color: black;
+  width: 75%;
+  text-align: center;
+  margin: 5% auto;
+  font-size: 42px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background-color: cadetblue;
+  padding: 15px;
+  margin: auto;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+  border: 2px solid yellow;
+}
+.container #reset {
+  font-size: 14px;
+  grid-column: span 2/-1;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+}
+
+.container2 {
+  background-color: cadetblue;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  border: 2px solid yellow;
+  margin: 10%;
+}
+.container2 #break-label,
+.container2 #break-length,
+.container2 #session-label,
+.container2 #session-length {
+  grid-column: span 2/-1;
+  justify-content: center;
+  margin: auto;
+  background-color: cadetblue;
+  font-size: 20px;
+}
+.container2 #session-increment,
+.container2 #session-decrement,
+.container2 #break-increment,
+.container2 #break-decrement {
+  font-size: 14px;
+}
+
+.container3 {
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-column: span 2/-1;
+  background-color: cadetblue;
+}
+.container3 #timer-label,
+.container3 #time-left {
+  display: grid;
+  grid-column: span 2/-1;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+}
+.container3 #timer-label {
+  font-size: 20px;
+}
+.container3 #time-left {
+  font-size: 42px;
+}
+.container3 #start_stop {
+  font-size: 14px;
+  grid-column: span 2/-1;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+}

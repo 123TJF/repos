@@ -1,0 +1,102 @@
+
+$button-font-size: 14px;
+$label-font-size: 20px;
+$header-font-size: 42px;
+$favourite-blue: #2196F3;
+$container-color: cadetblue;
+$hover-color: red;
+$hover-background: white;
+
+body {
+  background-color: $favourite-blue;
+}
+
+button:hover {
+  background-color: $hover-color;
+  color: $hover-background;
+}
+
+h1 {
+  background-color: $favourite-blue;
+  color: black;
+  width: 75%;
+  text-align: center;
+  margin: 5% auto;
+  font-size: $header-font-size;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background-color: $container-color;
+  padding: 15px;
+  margin: auto;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+  border: 2px solid yellow;
+
+  #reset {
+    font-size: $button-font-size;
+    grid-column: span 2 / -1;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+  }
+}
+
+.container2 {
+  background-color: $container-color;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  border: 2px solid yellow;
+  margin: 10%;
+ 
+  #break-label,
+  #break-length,
+  #session-label,
+  #session-length {
+    grid-column: span 2 / -1;
+    justify-content: center;
+    margin: auto;
+    background-color: $container-color;
+    font-size: $label-font-size;
+  }
+  #session-increment,
+  #session-decrement,
+  #break-increment,
+  #break-decrement {
+      font-size: $button-font-size;
+  }
+}
+  
+.container3 {
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-column: span 2 / -1;
+  background-color: $container-color;
+  
+  #timer-label,
+  #time-left {
+    display: grid;
+    grid-column: span 2 / -1;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+  }
+  #timer-label {
+    font-size: $label-font-size;
+  }
+  #time-left {
+    font-size: $header-font-size;
+  }
+  #start_stop {
+    font-size: $button-font-size;
+    grid-column: span 2 / -1;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+  }
+}

@@ -1,0 +1,66 @@
+body {
+  background-color: aqua;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-item {
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.drum-pad:hover {
+  background-color: black;
+  color: white;
+}
+
+#drum-machine {
+  background-color: aqua;
+  max-width: 500px;
+  padding: 15px;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
+
+#top-row {
+  background: #2196F3;
+  display:grid;
+  grid-template-columns: 200px 200px;
+  justify-content: center;
+}
+
+#control-panel {
+  margin-left: 5px;
+  margin: 0px;
+  justify-content: center;
+  text-align: center;
+}
+
+#on-off, #pwr-cnt {
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid black;
+  justify-content: center;
+}
+
+#display {
+  margin: 10px;
+  padding: 10px;
+  background-color: aqua;
+  border: 2px solid red;
+  font-size: 15px;
+}
+
+#on-off:hover {
+  background-color: black;
+  color: white;
+}
