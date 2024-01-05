@@ -1,5 +1,6 @@
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-// inspired by: https://dev.to/hajarnasr/treemaps-with-d3-js-55p7
+// Used examples and understanding outlined in : https://dev.to/hajarnasr/treemaps-with-d3-js-55p7
+// to build this treemap. Mainly around how a treemap is handled in D3.
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 // Number of columns used to draw legend.
